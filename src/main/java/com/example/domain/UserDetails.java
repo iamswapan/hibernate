@@ -1,18 +1,16 @@
-package com.example.dto;
+package com.example.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "user")
 public class UserDetails {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId;
     private String userName;
     private static int salary;
 
-    /*@Id
-    @Column(name = "roll")*/
+    /*@Column(name = "roll")*/
     public int getUserId() {
         return userId;
     }

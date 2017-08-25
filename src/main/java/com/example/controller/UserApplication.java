@@ -1,6 +1,7 @@
 package com.example.controller;
 
-import com.example.dto.UserDetails;
+import com.example.conf.HibernateConfig;
+import com.example.domain.UserDetails;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -13,23 +14,26 @@ public class UserApplication {
         try {
 
             //configaration
-            Configuration conf = new Configuration().configure("hibernate.cfg.xml");
+            /*Configuration conf = new Configuration().configure("hibernate.cfg.xml");
             //conf.configure("src/main/resources/hibernate.cfg.xml");
             //conf.configure("main/resources/hibernate.cfg.xml");
             //creating seession factory object
             SessionFactory factory = conf.buildSessionFactory();
 //            SessionFactory factory=new Configuration().configure().buildSessionFactory();
-            System.out.println("properties====="+conf.getProperties());
+            System.out.println("properties====="+conf.getProperties());*/
+
+            Session session= HibernateConfig.getSessionFactory().openSession();
+
             //creating session object
-            Session session = factory.openSession();
+//            Session session = factory.openSession();
             //
 
             /*UserDetails maa = new UserDetails();
             maa.setUserId(1);
             maa.setUserName("Jai Maa Durga");*/
             UserDetails user1=new UserDetails();
-            user1.setUserId(5);
-            user1.setUserName("Swapan18");
+            //user1.setUserId(5);
+            user1.setUserName("Second user");
             user1.setSalary(50000);
 
 
