@@ -18,13 +18,14 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">igdefault</property>
 
-        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
 
         <property name="hibernate.cache.use_second_level_cache">false</property>
 
         <property name="show_sql">true</property>
         <!--<mapping class="org.hibernate.osgi.test.client.DataPoint"/>
         <mapping class="org.hibernate.osgi.test.client.AuditedDataPoint"/>-->
-        <mapping class="com.example.dto.UserDetails"/>
+        <mapping class="com.example.domain.UserDetails"/>
+        <mapping class="com.example.domain.User"/>
     </session-factory>
 </hibernate-configuration>
